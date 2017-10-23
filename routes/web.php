@@ -19,7 +19,7 @@ Route::get('/', function () {
 */
 
 //練習八: 修改根路由'/'，使之可執行HomeController的indexc函數
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@indexc');
 
 //練習九: 修改路由，使之可執行StudentController內的getStudentData及getStudentScore函數
 Route::group(['prefix' => 'student'],function(){
@@ -33,7 +33,7 @@ Route::get('cool', 'Cool\TestController@indexc');
 
 //練習十: 修改路由'cool'，使之加入namespace路由'Cool'當中
 Route::group(['namespace' => 'Cool'],function (){
-    Route::get('cool', 'TestController@index');
+    Route::get('cool', 'TestController@indexc');
 });
 
 /*
