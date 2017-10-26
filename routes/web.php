@@ -20,10 +20,10 @@ Route::get('/', function () {
 
 //ch7練習二增加路由'/board'，使之可執行BoardController的getIndex方法
 Route::get('/board','BoardController@getIndex');
+Route::get('/score', 'StudentController@getStudentScore');
 
 
-
-
+/*
 //練習八: 修改根路由'/'，使之可執行HomeController的indexc函數
 Route::get('/', 'HomeController@indexc');
 
@@ -110,4 +110,4 @@ Route::group(['prefix' => 'student'],function(){
         }])->where(['subject' => '(chinese|english|math)']);
 });
 
-
+*/
