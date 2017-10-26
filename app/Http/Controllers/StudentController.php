@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use View;
 class StudentController extends Controller
 {
     public function getStudentData($student_no){
