@@ -18,12 +18,11 @@ Route::get('/', function () {
 });
 
 
-//ch7練習二增加路由'/board'，使之可執行BoardController的getIndex方法
-Route::get('/board','BoardController@getIndex');
-
-Route::get('/score', 'StudentController@getStudentScore');
 
 /*
+
+
+
 //練習八: 修改根路由'/'，使之可執行HomeController的indexc函數
 Route::get('/', 'HomeController@indexc');
 
@@ -99,7 +98,8 @@ Route::group(['prefix' => 'student'],function(){
 
 
     //練習七: 路由命名
-Route::pattern('student_no','s[0-9]{10}');
+
+
 Route::group(['prefix' => 'student'],function(){
     Route::get('{student_no}',['as' => 'student', 'uses' => function ($student_no) {
         return '學號：' . $student_no;
@@ -109,13 +109,18 @@ Route::group(['prefix' => 'student'],function(){
             return '學號：' . $student_no . '的' . ((is_null($subject)) ? '所有科目' : $subject) . '成績';
         }])->where(['subject' => '(chinese|english|math)']);
 });
-
 */
-
+//ch7練習二增加路由'/board'，使之可執行BoardController的getIndex方法
+Route::get('/board','BoardController@getIndex');
+Route::pattern('student_no','s[0-9]{10}');
 Route::group(['prefix' => 'student'],function() {
     //ch07練習三-7 測試http://localhost:8000/student/s9876543210
     Route::get('{student_no}', ['as' => 'student', 'uses' => 'StudentController@getStudentData']);
     //ch07練習三-7 http://localhost:8000/student/s9999999999/score/math
     Route::get('{student_no}/score/{subject?}', ['as' => 'student.score',
         'uses' => 'StudentController@getStudentScore'])->where(['subject' => '(chinese|english|math)']);
+});
+
+Route::group(['namespace' => 'Cool'],function (){
+    Route::get('cool', 'TestController@indexc');
 });
