@@ -3,6 +3,7 @@
 @section('title','詳細資料')
 
 @section('content')
+    <div class="container">
     <div class="page-header">
         <h1>詳細資料</h1>
     </div>
@@ -31,5 +32,6 @@
                 數學：60
             </p>
         @endif
+    </div>
     </div>
 @stop

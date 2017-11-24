@@ -3,6 +3,7 @@
 @section('title','詳細資料')
 
 @section('content')
+	<div class="container">
 		<div class="page-header">
 			<h1>詳細資料</h1>
 		</div>
@@ -15,6 +16,9 @@
 			</p>
 			<p>
 				電話：0912345678
+			</p>
+			<p>
+				信箱：user1@test.com
 			</p>
 			@if ( is_null($subject) || $subject=='chinese' )
 			<p>
@@ -32,4 +36,5 @@
 			</p>
 			@endif
 		</div>
+	</div>
 @stop
