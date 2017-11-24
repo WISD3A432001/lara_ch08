@@ -17,6 +17,9 @@
         <p>
             電話：0912345678
         </p>
+        <p>
+            信箱：user1@test.com
+        </p>
         @if ( is_null($subject) || $subject=='chinese' )
             <p>
                 國文：60

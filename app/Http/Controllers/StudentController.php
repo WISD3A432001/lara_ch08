@@ -11,7 +11,7 @@ class StudentController extends Controller
     public function getStudentData($student_no)
     {
 
-        return View::make('score', ['student_no' => $student_no, 'subject' => null
+        return View::make('student', ['student_no' => $student_no, 'subject' => null
         ]);
         $student=Student::where('no',$student_no)->firstOrFail();
         return View::make('student',[
